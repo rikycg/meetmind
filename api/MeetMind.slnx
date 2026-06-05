@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="MeetMind.API/MeetMind.API.csproj" />
+  <Project Path="MeetMind.Application/MeetMind.Application.csproj" />
+  <Project Path="MeetMind.Domain/MeetMind.Domain.csproj" />
+  <Project Path="MeetMind.Infrastructure/MeetMind.Infrastructure.csproj" />
+</Solution>
