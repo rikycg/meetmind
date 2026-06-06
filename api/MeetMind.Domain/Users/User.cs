@@ -9,7 +9,7 @@ public sealed class User : Entity
     public string PasswordHash { get; private set; }
     public UserRole Role { get; private set; }
 
-    private User() : base() { }  // Para EF Core
+    private User() : base() { }
 
     private User(Email email, FullName fullName, string passwordHash, UserRole role)
         : base()
