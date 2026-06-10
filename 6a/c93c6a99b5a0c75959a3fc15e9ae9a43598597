@@ -1,0 +1,16 @@
+api/MeetMind.Domain/Meetings/TranscriptLanguage.cs
+  h_ca3e605b3bbdc7 1-6
+api/MeetMind.Domain/Meetings/Transcript.cs
+  h_ca3e605b3bbdc7 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "6ac93c6a99b5a0c75959a3fc15e9ae9a43598597",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
