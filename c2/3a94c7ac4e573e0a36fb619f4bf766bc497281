@@ -1,0 +1,14 @@
+README.md
+  h_ca3e605b3bbdc7 113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "c23a94c7ac4e573e0a36fb619f4bf766bc497281",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
