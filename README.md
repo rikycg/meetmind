@@ -110,7 +110,7 @@ Audio Capture → SignalR Streaming → Whisper Transcription → GPT Summarizat
 
 ### Prerequisites
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Node.js 20+](https://nodejs.org/) (for frontend, coming in Phase 2)
 - [Rust](https://rustup.rs/) (for Tauri desktop app, coming in Phase 2)
