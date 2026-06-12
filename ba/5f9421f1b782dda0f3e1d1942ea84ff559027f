@@ -1,0 +1,20 @@
+api/MeetMind.Domain/Meetings/KeyDecision.cs
+  h_ca3e605b3bbdc7 1-25
+api/MeetMind.Domain/Meetings/ActionItem.cs
+  h_ca3e605b3bbdc7 1-67
+api/MeetMind.Domain/Meetings/ActionItemStatus.cs
+  h_ca3e605b3bbdc7 1-8
+api/MeetMind.Domain/Meetings/MeetingSummary.cs
+  h_ca3e605b3bbdc7 1-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "ba5f9421f1b782dda0f3e1d1942ea84ff559027f",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
