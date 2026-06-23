@@ -1,0 +1,14 @@
+api/MeetMind.Infrastructure/Persistence/Configurations/AudioRecordingConfiguration.cs
+  h_ca3e605b3bbdc7 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.10",
+  "base_commit_sha": "5bb8d4b556eab90c7928713a70be68196f7b4f3f",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
