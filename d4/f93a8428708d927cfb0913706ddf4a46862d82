@@ -1,0 +1,16 @@
+api/MeetMind.Infrastructure/Persistence/Repositories/MeetingRepository.cs
+  h_ca3e605b3bbdc7 1-62
+api/MeetMind.Infrastructure/Persistence/MeetMindDbContext.cs
+  h_ca3e605b3bbdc7 27,29-31,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.11",
+  "base_commit_sha": "d4f93a8428708d927cfb0913706ddf4a46862d82",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
