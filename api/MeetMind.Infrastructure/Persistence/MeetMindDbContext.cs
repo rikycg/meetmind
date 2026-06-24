@@ -23,17 +23,16 @@ public class MeetMindDbContext : DbContext
     public DbSet<ActionItem> ActionItems => Set<ActionItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-    // Todos los DateTime se guardan como timestamptz
-    foreach (var entity in modelBuilder.Model.GetEntityTypes())
     {
-        foreach (var property in entity.GetProperties()
-            .Where(p => p.ClrType == typeof(DateTime) || p.ClrType == typeof(DateTime?)))
+        foreach (var entity in modelBuilder.Model.GetEntityTypes())
         {
-            property.SetColumnType("timestamp with time zone");
+            foreach (var property in entity.GetProperties()
+                .Where(p => p.ClrType == typeof(DateTime) || p.ClrType == typeof(DateTime?)))
+            {
+                property.SetColumnType("timestamp with time zone");
+            }
         }
-    }
 
-    modelBuilder.ApplyConfigurationsFromAssembly(typeof(MeetMindDbContext).Assembly);
-}
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MeetMindDbContext).Assembly);
+    }
 }
