@@ -1,0 +1,18 @@
+api/MeetMind.Infrastructure/DependencyInjection.cs
+  h_ca3e605b3bbdc7 1-29
+api/MeetMind.API/appsettings.Development.json
+  h_ca3e605b3bbdc7 7-9
+api/MeetMind.API/Program.cs
+  h_ca3e605b3bbdc7 1-2,4,9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "45f53661cc023d990b316af1f97f01be3029ae1c",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
