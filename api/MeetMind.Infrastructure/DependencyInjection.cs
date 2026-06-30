@@ -11,7 +11,10 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, string connectionString) 
     {
         services.AddDbContext<MeetMindDbContext>(options =>
-            options.UseNpgsql(connectionString));
+            options
+                .UseNpgsql(connectionString)
+                .UseSnakeCaseNamingConvention());
+                
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMeetingRepository, MeetingRepository>();
         services.AddScoped<IActionItemRepository, ActionItemRepository>();

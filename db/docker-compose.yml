@@ -1,0 +1,15 @@
+services:
+  meetminddb:
+    image: postgres
+    container_name: meetmind-db
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: meetmind
+      POSTGRES_USER: meetminduser
+      POSTGRES_PASSWORD: meetmindpassword
+    volumes:
+      - meetmind-data:/var/lib/postgresql
+
+volumes:
+  meetmind-data: 
