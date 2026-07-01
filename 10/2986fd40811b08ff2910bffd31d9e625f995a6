@@ -1,0 +1,20 @@
+api/MeetMind.Application/DependencyInjection.cs
+  h_ca3e605b3bbdc7 1-14
+api/MeetMind.API/Program.cs
+  h_ca3e605b3bbdc7 1,8
+api/MeetMind.Application/Users/Common/UserResponse.cs
+  h_ca3e605b3bbdc7 1-11
+api/MeetMind.Application/Users/Queries/GetAllUsers/GetAllUsersQueryHandler.cs
+  h_ca3e605b3bbdc7 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.6",
+  "base_commit_sha": "102986fd40811b08ff2910bffd31d9e625f995a6",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
