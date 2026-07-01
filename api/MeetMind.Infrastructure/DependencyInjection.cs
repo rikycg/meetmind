@@ -14,7 +14,7 @@ public static class DependencyInjection
             options
                 .UseNpgsql(connectionString)
                 .UseSnakeCaseNamingConvention());
-                
+
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IMeetingRepository, MeetingRepository>();
         services.AddScoped<IActionItemRepository, ActionItemRepository>();
