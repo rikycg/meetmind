@@ -1,0 +1,14 @@
+api/MeetMind.Domain/Meetings/Meeting.cs
+  h_ca3e605b3bbdc7 28-29,59,61-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "d2cb9d38451937219695dc933386d9bd93638098",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
