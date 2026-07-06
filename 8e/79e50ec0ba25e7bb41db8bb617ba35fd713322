@@ -1,0 +1,16 @@
+api/MeetMind.Application/Meetings/Commands/UpdateMeeting/UpdateMeetingCommandHandler.cs
+  h_ca3e605b3bbdc7 1-42
+api/MeetMind.Application/Meetings/Commands/UpdateMeeting/UpdateMeetingCommand.cs
+  h_ca3e605b3bbdc7 1-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "8e79e50ec0ba25e7bb41db8bb617ba35fd713322",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
