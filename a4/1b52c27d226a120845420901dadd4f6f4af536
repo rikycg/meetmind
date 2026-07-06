@@ -1,0 +1,16 @@
+api/MeetMind.Application/Meetings/Commands/CancelMeeting/CancelMeetingCommand.cs
+  h_ca3e605b3bbdc7 1-8
+api/MeetMind.Application/Meetings/Commands/CancelMeeting/CancelMeetingCommandHandler.cs
+  h_ca3e605b3bbdc7 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "a41b52c27d226a120845420901dadd4f6f4af536",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
