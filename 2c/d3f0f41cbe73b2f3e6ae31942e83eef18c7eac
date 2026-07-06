@@ -1,0 +1,14 @@
+api/MeetMind.Application/Users/Commands/CreateUser/CreateUserCommandHandler.cs
+  h_ca3e605b3bbdc7 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "2cd3f0f41cbe73b2f3e6ae31942e83eef18c7eac",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
