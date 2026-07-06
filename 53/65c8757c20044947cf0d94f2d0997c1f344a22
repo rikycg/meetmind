@@ -1,0 +1,12 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "5365c8757c20044947cf0d94f2d0997c1f344a22",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
