@@ -25,14 +25,9 @@ public sealed class Meeting : Entity {
     }
 
     public static Meeting Create (string title, string description, DateTime scheduledAt, Guid hostId, Guid? teamId) {
-        if (string.IsNullOrWhiteSpace(title))
-            throw new ArgumentException("title is empty.");
+        string titleCleaned = GetTextCleaned(title, "title");
+        string descriptionCleaned = GetTextCleaned(description, "description");
         
-        if (string.IsNullOrWhiteSpace(description))
-            throw new ArgumentException("description is empty.");
-
-        string titleCleaned = title.Trim();
-        string descriptionCleaned = description.Trim();
         MeetingStatus status = MeetingStatus.Scheduled;
 
         return new Meeting(titleCleaned, descriptionCleaned, scheduledAt, hostId, status, teamId);
@@ -61,5 +56,24 @@ public sealed class Meeting : Entity {
 
         Status = MeetingStatus.Completed;
         EndedAt = DateTime.UtcNow;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void UpdateTitle(string title) {
+        Title = GetTextCleaned(title, "title");
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void UpdateDescription(string description) {
+        Description = GetTextCleaned(description, "description");
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    private static string GetTextCleaned(string text, string label) {
+        if (string.IsNullOrWhiteSpace(text))
+            throw new ArgumentException($"{label} is empty.");
+        
+        string textCleaned = text.Trim();
+        return textCleaned;
     }
 }
