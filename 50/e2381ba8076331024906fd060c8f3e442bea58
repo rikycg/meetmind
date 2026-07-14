@@ -1,0 +1,14 @@
+api/MeetMind.API/Controllers/MeetingsController.cs
+  h_ca3e605b3bbdc7 1-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "50e2381ba8076331024906fd060c8f3e442bea58",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
