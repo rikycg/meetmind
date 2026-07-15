@@ -1,0 +1,58 @@
+api/MeetMind.Application/Meetings/Commands/CreateTranscript/CreateTranscriptCommandHandler.cs
+  h_ca3e605b3bbdc7 26
+api/MeetMind.Domain/Meetings/Participant.cs
+  h_ca3e605b3bbdc7 1,34
+api/MeetMind.Domain/Exceptions/NotFoundException.cs
+  h_ca3e605b3bbdc7 1-6
+api/MeetMind.Application/Meetings/Commands/CancelMeeting/CancelMeetingCommandHandler.cs
+  h_ca3e605b3bbdc7 22
+api/MeetMind.Domain/Meetings/Meeting.cs
+  h_ca3e605b3bbdc7 2,39,48,56
+api/MeetMind.Application/Teams/Commands/CreateTeam/CreateTeamCommandHandler.cs
+  h_ca3e605b3bbdc7 4,23
+api/MeetMind.Application/Teams/Queries/GetTeamByName/GetTeamByNameQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.Application/Users/Commands/CreateUser/CreateUserCommandHandler.cs
+  h_ca3e605b3bbdc7 5,23
+api/MeetMind.Application/Meetings/Queries/GetMeetingByTitle/GetMeetingByTitleQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.Domain/Meetings/ActionItem.cs
+  h_ca3e605b3bbdc7 2,37,45,53
+api/MeetMind.Application/Meetings/Queries/GetMeetingSummaryByMeetingId/GetMeetingSummaryByMeetingIdQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.Domain/Exceptions/BadRequestException.cs
+  h_ca3e605b3bbdc7 1-6
+api/MeetMind.Application/Meetings/Commands/UpdateMeeting/UpdateMeetingCommandHandler.cs
+  h_ca3e605b3bbdc7 23
+api/MeetMind.Application/Meetings/Commands/AddParticipant/AddParticipantCommandHandler.cs
+  h_ca3e605b3bbdc7 26
+api/MeetMind.Application/Meetings/Commands/CreateMeetingSummary/CreateMeetingSummaryCommandHandler.cs
+  h_ca3e605b3bbdc7 5,23
+api/MeetMind.Application/Users/Queries/GetUserById/GetUserByIdQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.Application/Users/Queries/GetUserByEmail/GetUserByEmailQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.API/Program.cs
+  h_ca3e605b3bbdc7 1,21
+api/MeetMind.Domain/Exceptions/ConflictException.cs
+  h_ca3e605b3bbdc7 1-6
+api/MeetMind.Application/Meetings/Queries/GetMeetingById/GetMeetingByIdQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.Application/Meetings/Queries/GetTranscriptByMeetingId/GetTranscriptByMeetingIdQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.Application/Teams/Queries/GetTeamById/GetTeamByIdQueryHandler.cs
+  h_ca3e605b3bbdc7 2,22
+api/MeetMind.API/Middlewares/ExceptionHandlingMiddleware.cs
+  h_ca3e605b3bbdc7 1-34,36-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "022ef2c70f0d1d1bde583a9c388e43ad22ac3290",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
