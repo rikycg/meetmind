@@ -1,4 +1,5 @@
 using MediatR;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
 
@@ -18,7 +19,7 @@ public class GetMeetingByIdQueryHandler : IRequestHandler<GetMeetingByIdQuery, M
         var meeting = await _meetingRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (meeting is null)
-            return null;
+            throw new NotFoundException($"Meeting with id '{request.Id}' was not found.");
 
         return new MeetingResponse(
             meeting.Id,

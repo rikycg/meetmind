@@ -1,5 +1,6 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.DeleteActionItem;
 
@@ -17,7 +18,7 @@ public class DeleteActionItemCommandHandler : IRequestHandler<DeleteActionItemCo
         var actionItem = await _actionItemRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (actionItem is null)
-            throw new KeyNotFoundException($"Action item with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Action item with id '{request.Id}' was not found.");
 
         await _actionItemRepository.DeleteAsync(request.Id, cancellationToken);
     }

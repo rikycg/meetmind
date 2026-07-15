@@ -1,6 +1,7 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.StartMeeting;
 
@@ -18,7 +19,7 @@ public class StartMeetingCommandHandler : IRequestHandler<StartMeetingCommand, M
         var meeting = await _meetingRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (meeting is null)
-            throw new KeyNotFoundException($"Meeting with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Meeting with id '{request.Id}' was not found.");
 
         meeting.Start();
 

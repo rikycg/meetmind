@@ -1,5 +1,6 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Teams.Commands.RemoveTeamMember;
 
@@ -17,7 +18,7 @@ public class RemoveTeamMemberCommandHandler : IRequestHandler<RemoveTeamMemberCo
         var member = await _teamMemberRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (member is null)
-            throw new KeyNotFoundException($"Team member with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Team member with id '{request.Id}' was not found.");
 
         await _teamMemberRepository.RemoveFromTeamAsync(request.Id, cancellationToken);
     }

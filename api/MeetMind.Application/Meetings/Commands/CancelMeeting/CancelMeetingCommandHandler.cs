@@ -1,6 +1,7 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.CancelMeeting;
 
@@ -18,7 +19,7 @@ public class CancelMeetingCommandHandler : IRequestHandler<CancelMeetingCommand,
         var meeting = await _meetingRespository.GetByIdAsync(request.Id, cancellationToken);
 
         if (meeting is null) {
-            throw new InvalidOperationException("The meeting doesn't exist");
+            throw new NotFoundException("The meeting to cancel was not found");
         }
 
         meeting.Cancel();

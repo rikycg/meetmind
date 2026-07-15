@@ -1,5 +1,6 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.RemoveParticipant;
 
@@ -17,7 +18,7 @@ public class RemoveParticipantCommandHandler : IRequestHandler<RemoveParticipant
         var participant = await _participantRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (participant is null)
-            throw new KeyNotFoundException($"Participant with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Participant with id '{request.Id}' was not found.");
 
         await _participantRepository.RemoveAsync(request.Id, cancellationToken);
     }

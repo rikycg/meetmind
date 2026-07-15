@@ -1,6 +1,7 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Domain.Meetings;
 
 namespace MeetMind.Application.Meetings.Queries.GetMeetingsByStatus;
@@ -17,7 +18,7 @@ public class GetMeetingsByStatusQueryHandler : IRequestHandler<GetMeetingsByStat
     public async Task<IEnumerable<MeetingResponse>> Handle(GetMeetingsByStatusQuery request, CancellationToken cancellationToken = default)
     {
         if (!Enum.TryParse<MeetingStatus>(request.Status, true, out var status))
-            throw new ArgumentException($"'{request.Status}' is not a valid meeting status.");
+            throw new BadRequestException($"'{request.Status}' is not a valid meeting status.");
 
         var meetings = await _meetingRepository.GetAllByStatusAsync(status, cancellationToken);
 

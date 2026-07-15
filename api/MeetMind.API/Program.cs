@@ -1,3 +1,4 @@
+using MeetMind.API.Middlewares;
 using MeetMind.Application;
 using MeetMind.Infrastructure;
 
@@ -17,6 +18,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();

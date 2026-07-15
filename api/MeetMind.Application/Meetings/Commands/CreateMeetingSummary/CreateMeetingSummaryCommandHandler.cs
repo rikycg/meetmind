@@ -2,6 +2,7 @@ using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
 using MeetMind.Domain.Meetings;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.CreateMeetingSummary;
 
@@ -19,7 +20,7 @@ public class CreateMeetingSummaryCommandHandler : IRequestHandler<CreateMeetingS
         var existing = await _meetingSummaryRepository.GetByMeetingIdAsync(request.MeetingId, cancellationToken);
 
         if (existing is not null)
-            throw new InvalidOperationException("A summary already exists for this meeting.");
+            throw new ConflictException("A summary already exists for this meeting.");
 
         var summary = MeetingSummary.Create(request.MeetingId, request.Summary);
 

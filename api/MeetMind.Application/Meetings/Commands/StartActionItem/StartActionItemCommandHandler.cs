@@ -1,6 +1,7 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.StartActionItem;
 
@@ -18,7 +19,7 @@ public class StartActionItemCommandHandler : IRequestHandler<StartActionItemComm
         var actionItem = await _actionItemRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (actionItem is null)
-            throw new KeyNotFoundException($"Action item with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Action item with id '{request.Id}' was not found.");
 
         actionItem.Start();
 

@@ -1,4 +1,5 @@
 using MediatR;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
 
@@ -18,7 +19,7 @@ public class GetMeetingByTitleQueryHandler : IRequestHandler<GetMeetingByTitleQu
         var meeting = await _meetingRepository.GetByTitleAsync(request.Title, cancellationToken);
 
         if (meeting is null)
-            return null;
+            throw new NotFoundException($"Meeting with title '{request.Title}' was not found.");
 
         return new MeetingResponse(
             meeting.Id,

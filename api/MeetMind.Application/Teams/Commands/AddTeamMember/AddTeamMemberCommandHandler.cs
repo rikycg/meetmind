@@ -1,6 +1,7 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Teams.Common;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Domain.Teams;
 
 namespace MeetMind.Application.Teams.Commands.AddTeamMember;
@@ -17,7 +18,7 @@ public class AddTeamMemberCommandHandler : IRequestHandler<AddTeamMemberCommand,
     public async Task<TeamMemberResponse> Handle(AddTeamMemberCommand request, CancellationToken cancellationToken = default)
     {
         if (!Enum.TryParse<TeamMemberRole>(request.Role, true, out var role))
-            throw new ArgumentException($"'{request.Role}' is not a valid team member role.");
+            throw new BadRequestException($"'{request.Role}' is not a valid team member role.");
 
         var teamMember = TeamMember.Create(request.UserId, request.TeamId, role);
 

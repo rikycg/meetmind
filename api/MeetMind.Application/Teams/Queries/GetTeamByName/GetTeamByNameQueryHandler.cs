@@ -1,4 +1,5 @@
 using MediatR;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Teams.Common;
 
@@ -18,7 +19,7 @@ public class GetTeamByNameQueryHandler : IRequestHandler<GetTeamByNameQuery, Tea
         var team = await _teamRepository.GetByNameAsync(request.Name, cancellationToken);
 
         if (team is null)
-            return null;
+            throw new NotFoundException($"Team with name '{request.Name}' was not found.");
 
         return new TeamResponse(
             team.Id,

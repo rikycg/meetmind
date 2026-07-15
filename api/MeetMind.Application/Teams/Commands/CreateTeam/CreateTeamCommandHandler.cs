@@ -1,6 +1,7 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Teams.Common;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Domain.Teams;
 
 namespace MeetMind.Application.Teams.Commands.CreateTeam;
@@ -19,7 +20,7 @@ public class CreateTeamCommandHandler : IRequestHandler<CreateTeamCommand, TeamR
         var exists = await _teamRepository.ExistsAsync(request.Name, cancellationToken);
 
         if (exists)
-            throw new InvalidOperationException($"A team with name '{request.Name}' already exists.");
+            throw new ConflictException($"A team with name '{request.Name}' already exists.");
 
         var team = Team.Create(request.Name, request.Description);
 

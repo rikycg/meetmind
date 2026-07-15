@@ -2,6 +2,7 @@ using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Users.Common;
 using MeetMind.Domain.Users;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Users.Commands.CreateUser;
 
@@ -19,7 +20,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserR
         var exists = await _userRepository.ExistsAsync(request.Email, cancellationToken);
 
         if (exists)
-            throw new InvalidOperationException($"A user with email '{request.Email}' already exists.");
+            throw new ConflictException($"A user with email '{request.Email}' already exists.");
 
         var user = User.Create(
             request.Email,

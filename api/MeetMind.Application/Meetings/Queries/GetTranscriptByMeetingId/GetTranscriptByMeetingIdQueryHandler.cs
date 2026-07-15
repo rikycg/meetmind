@@ -1,4 +1,5 @@
 using MediatR;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
 
@@ -18,7 +19,7 @@ public class GetTranscriptByMeetingIdQueryHandler : IRequestHandler<GetTranscrip
         var transcript = await _transcriptRepository.GetByMeetingIdAsync(request.MeetingId, cancellationToken);
 
         if (transcript is null)
-            return null;
+            throw new NotFoundException($"Transcript with meeting id '{request.MeetingId}' was not found.");
 
         return new TranscriptResponse(
             transcript.Id,

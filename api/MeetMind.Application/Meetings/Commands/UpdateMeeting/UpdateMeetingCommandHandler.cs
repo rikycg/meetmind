@@ -1,7 +1,8 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
-using MeetMind.Domain.Meetings;
 using MeetMind.Application.Meetings.Common;
+using MeetMind.Domain.Exceptions;
+using MeetMind.Domain.Meetings;
 
 namespace MeetMind.Application.Meetings.Commands.UpdateMeeting;
 
@@ -19,7 +20,7 @@ public class UpdateMeetingCommandHandler : IRequestHandler<UpdateMeetingCommand,
         var meeting = await _meetingRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (meeting is null) {
-            throw new InvalidOperationException("The meeting to update doesn't exist");
+            throw new NotFoundException("The meeting to update was not found");
         }
 
         meeting.UpdateTitle(request.Title);

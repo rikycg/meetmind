@@ -1,4 +1,5 @@
 using MediatR;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Users.Common;
 
@@ -18,7 +19,7 @@ public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, UserRes
         var user = await _userRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (user is null)
-            return null;
+            throw new NotFoundException($"User with id '{request.Id}' was not found.");
 
         return new UserResponse(
             user.Id,

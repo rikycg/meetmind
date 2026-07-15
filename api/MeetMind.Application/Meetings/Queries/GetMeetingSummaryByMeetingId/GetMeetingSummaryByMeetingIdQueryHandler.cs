@@ -1,4 +1,5 @@
 using MediatR;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Meetings.Common;
 
@@ -18,7 +19,7 @@ public class GetMeetingSummaryByMeetingIdQueryHandler : IRequestHandler<GetMeeti
         var summary = await _meetingSummaryRepository.GetByMeetingIdAsync(request.MeetingId, cancellationToken);
 
         if (summary is null)
-            return null;
+            throw new NotFoundException($"Summary with meeting id '{request.MeetingId}' was not found.");
 
         return new MeetingSummaryResponse(
             summary.Id,

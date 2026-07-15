@@ -1,3 +1,4 @@
+using MeetMind.Domain.Exceptions;
 using MeetMind.Domain.Common;
 
 namespace MeetMind.Domain.Meetings;
@@ -30,7 +31,7 @@ public sealed class Participant : Entity {
 
     public void LeftMeeting() {
         if (LeftAt.HasValue)
-            throw new InvalidOperationException("Participant already left the meeting.");
+            throw new ConflictException("Participant already left the meeting.");
 
         LeftAt = DateTime.UtcNow;
     }

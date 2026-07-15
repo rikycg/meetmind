@@ -1,5 +1,6 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.DeleteMeeting;
 
@@ -17,7 +18,7 @@ public class DeleteMeetingCommandHandler : IRequestHandler<DeleteMeetingCommand>
         var meeting = await _meetingRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (meeting is null)
-            throw new KeyNotFoundException($"Meeting with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Meeting with id '{request.Id}' was not found.");
 
         await _meetingRepository.DeleteAsync(request.Id, cancellationToken);
     }

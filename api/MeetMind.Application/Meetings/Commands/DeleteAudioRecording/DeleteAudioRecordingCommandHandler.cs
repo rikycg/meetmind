@@ -1,5 +1,6 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Meetings.Commands.DeleteAudioRecording;
 
@@ -17,7 +18,7 @@ public class DeleteAudioRecordingCommandHandler : IRequestHandler<DeleteAudioRec
         var recording = await _audioRecordingRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (recording is null)
-            throw new KeyNotFoundException($"Audio recording with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Audio recording with id '{request.Id}' was not found.");
 
         await _audioRecordingRepository.DeleteAsync(request.Id, cancellationToken);
     }

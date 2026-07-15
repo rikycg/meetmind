@@ -1,6 +1,7 @@
 using MediatR;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Teams.Common;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Application.Teams.Commands.UpdateTeam;
 
@@ -18,7 +19,7 @@ public class UpdateTeamCommandHandler : IRequestHandler<UpdateTeamCommand, TeamR
         var team = await _teamRepository.GetByIdAsync(request.Id, cancellationToken);
 
         if (team is null)
-            throw new KeyNotFoundException($"Team with id '{request.Id}' was not found.");
+            throw new NotFoundException($"Team with id '{request.Id}' was not found.");
 
         team.UpdateInfo(request.Name, request.Description);
 

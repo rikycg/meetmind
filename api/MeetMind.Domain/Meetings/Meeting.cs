@@ -1,4 +1,5 @@
 using MeetMind.Domain.Common;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Domain.Meetings;
 
@@ -35,7 +36,7 @@ public sealed class Meeting : Entity {
 
     public void Start() {
         if (Status != MeetingStatus.Scheduled)
-            throw new InvalidOperationException("Only scheduled meetings can be started.");
+            throw new ConflictException("Only scheduled meetings can be started.");
         
         Status = MeetingStatus.InProgress;
         StartedAt = DateTime.UtcNow;
@@ -44,7 +45,7 @@ public sealed class Meeting : Entity {
 
     public void Cancel() {
         if (Status != MeetingStatus.Scheduled)
-            throw new InvalidOperationException("Only scheduled meetings can be cancelled.");
+            throw new ConflictException("Only scheduled meetings can be cancelled.");
 
         Status = MeetingStatus.Cancelled;
         UpdatedAt = DateTime.UtcNow;
@@ -52,7 +53,7 @@ public sealed class Meeting : Entity {
 
     public void Complete() {
         if (Status != MeetingStatus.InProgress)
-            throw new InvalidOperationException("Only in progress meetings can be completed.");
+            throw new ConflictException("Only in progress meetings can be completed.");
 
         Status = MeetingStatus.Completed;
         EndedAt = DateTime.UtcNow;

@@ -1,4 +1,5 @@
 using MeetMind.Domain.Common;
+using MeetMind.Domain.Exceptions;
 
 namespace MeetMind.Domain.Meetings;
 
@@ -33,7 +34,7 @@ public sealed class ActionItem : Entity {
 
     public void Start() {
         if (Status != ActionItemStatus.Pending)
-            throw new InvalidOperationException("Only pending items can be started.");
+            throw new ConflictException("Only pending items can be started.");
 
         Status = ActionItemStatus.InProgress;
         UpdatedAt = DateTime.UtcNow;
@@ -41,7 +42,7 @@ public sealed class ActionItem : Entity {
 
     public void Complete() {
         if (Status != ActionItemStatus.InProgress)
-            throw new InvalidOperationException("Only in progress items can be completed.");
+            throw new ConflictException("Only in progress items can be completed.");
 
         Status = ActionItemStatus.Completed;
         UpdatedAt = DateTime.UtcNow;
@@ -49,7 +50,7 @@ public sealed class ActionItem : Entity {
 
     public void Cancel() {
         if (Status == ActionItemStatus.Completed)
-            throw new InvalidOperationException("Completed items cannot be cancelled.");
+            throw new ConflictException("Completed items cannot be cancelled.");
 
         Status = ActionItemStatus.Cancelled;
         UpdatedAt = DateTime.UtcNow;

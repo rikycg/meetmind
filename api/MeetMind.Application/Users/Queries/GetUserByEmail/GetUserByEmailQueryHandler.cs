@@ -1,4 +1,5 @@
 using MediatR;
+using MeetMind.Domain.Exceptions;
 using MeetMind.Application.Interfaces;
 using MeetMind.Application.Users.Common;
 
@@ -18,7 +19,7 @@ public class GetUserByEmailQueryHandler : IRequestHandler<GetUserByEmailQuery, U
         var user = await _userRepository.GetByEmailAsync(request.Email, cancellationToken);
 
         if (user is null)
-            return null;
+            throw new NotFoundException($"User with email '{request.Email}' was not found.");
 
         return new UserResponse(
             user.Id,
