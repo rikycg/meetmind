@@ -1,0 +1,32 @@
+api/MeetMind.Infrastructure/Security/JwtSettings.cs
+  h_ca3e605b3bbdc7 1-12
+api/MeetMind.Infrastructure/DependencyInjection.cs
+  h_ca3e605b3bbdc7 15
+api/MeetMind.API/appsettings.Development.json
+  h_ca3e605b3bbdc7 10-16
+api/MeetMind.API/Controllers/AuthController.cs
+  s_c9193331b6a86e::t_b8e63d82aef659 1-48
+api/MeetMind.Application/Auth/Commands/Login/LoginCommandHandler.cs
+  s_c9193331b6a86e::t_6050f9dd760cb6 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "2fa27e04d449ee4f9c89d0e77ee03615bec949e5",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  },
+  "sessions": {
+    "s_c9193331b6a86e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "20e3035d-3b23-4fdc-86ee-86e40a864871",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
