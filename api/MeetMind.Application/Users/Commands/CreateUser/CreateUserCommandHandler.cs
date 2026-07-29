@@ -9,10 +9,12 @@ namespace MeetMind.Application.Users.Commands.CreateUser;
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserResponse>
 {
     private readonly IUserRepository _userRepository;
+    private readonly IPasswordHasher _passwordHasher;
 
-    public CreateUserCommandHandler(IUserRepository userRepository)
+    public CreateUserCommandHandler(IUserRepository userRepository, IPasswordHasher passwordHasher)
     {
         _userRepository = userRepository;
+        _passwordHasher = passwordHasher;
     }
 
     public async Task<UserResponse> Handle(CreateUserCommand request, CancellationToken cancellationToken = default)
@@ -22,11 +24,13 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserR
         if (exists)
             throw new ConflictException($"A user with email '{request.Email}' already exists.");
 
+        var passwordHash = _passwordHasher.Hash(request.Password);
+
         var user = User.Create(
             request.Email,
             request.FirstName,
             request.LastName,
-            request.Password
+            passwordHash
         );
 
         await _userRepository.AddAsync(user, cancellationToken);

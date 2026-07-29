@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MeetMind.Application.Interfaces;
 using MeetMind.Infrastructure.Persistence;
 using MeetMind.Infrastructure.Persistence.Repositories;
+using MeetMind.Infrastructure.Security;
 
 namespace MeetMind.Infrastructure;
 
@@ -26,6 +27,9 @@ public static class DependencyInjection
         services.AddScoped<ITranscriptSegmentRepository, TranscriptSegmentRepository>();
         services.AddScoped<ITeamRepository, TeamRepository>();
         services.AddScoped<ITeamMemberRepository, TeamMemberRepository>();
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+
+        services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
         return services;
     }
