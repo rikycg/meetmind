@@ -1,0 +1,24 @@
+api/MeetMind.Application/Users/Commands/CreateUser/CreateUserCommandHandler.cs
+  s_c9193331b6a86e::t_62bf717b37416c 12,14,17,27-28,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "894fad528f4c29cdc6fa8ea1301ba12208cbf158",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  },
+  "sessions": {
+    "s_c9193331b6a86e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "20e3035d-3b23-4fdc-86ee-86e40a864871",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
