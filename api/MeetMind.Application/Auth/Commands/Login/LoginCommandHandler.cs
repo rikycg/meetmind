@@ -2,7 +2,7 @@ using MediatR;
 using MeetMind.Application.Auth.Common;
 using MeetMind.Application.Interfaces;
 using MeetMind.Domain.Exceptions;
-using MeetMind.Domain.Users;
+using RefreshTokenEntity = MeetMind.Domain.Users.RefreshToken;
 
 namespace MeetMind.Application.Auth.Commands.Login;
 
@@ -35,7 +35,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, AuthResponse>
         var accessToken = _jwtTokenGenerator.GenerateAccessToken(user);
         var (refreshTokenValue, expiresAt) = _jwtTokenGenerator.GenerateRefreshToken();
 
-        var refreshToken = RefreshToken.Create(refreshTokenValue, user.Id, expiresAt);
+        var refreshToken = RefreshTokenEntity.Create(refreshTokenValue, user.Id, expiresAt);
         await _refreshTokenRepository.AddAsync(refreshToken, cancellationToken);
 
         return new AuthResponse(

@@ -2,12 +2,14 @@ using MediatR;
 using MeetMind.Application.Meetings.Commands.CreateMeetingSummary;
 using MeetMind.Application.Meetings.Commands.DeleteMeetingSummary;
 using MeetMind.Application.Meetings.Queries.GetMeetingSummaryByMeetingId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/meetings/{meetingId}/summary")]
+[Authorize]
 public class MeetingSummariesController : ControllerBase
 {
     private readonly IMediator _mediator;

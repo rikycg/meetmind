@@ -7,12 +7,14 @@ using MeetMind.Application.Meetings.Commands.StartActionItem;
 using MeetMind.Application.Meetings.Common;
 using MeetMind.Application.Meetings.Queries.GetActionItemsByAssignedTo;
 using MeetMind.Application.Meetings.Queries.GetActionItemsBySummaryId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/action-items")]
+[Authorize]
 public class ActionItemsController : ControllerBase
 {
     private readonly IMediator _mediator;

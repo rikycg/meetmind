@@ -2,12 +2,14 @@ using MediatR;
 using MeetMind.Application.Meetings.Commands.CreateKeyDecision;
 using MeetMind.Application.Meetings.Commands.DeleteKeyDecision;
 using MeetMind.Application.Meetings.Queries.GetKeyDecisionsBySummaryId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/summaries/{summaryId}/key-decisions")]
+[Authorize]
 public class KeyDecisionsController : ControllerBase
 {
     private readonly IMediator _mediator;

@@ -2,12 +2,14 @@ using MediatR;
 using MeetMind.Application.Meetings.Commands.CreateAudioRecording;
 using MeetMind.Application.Meetings.Commands.DeleteAudioRecording;
 using MeetMind.Application.Meetings.Queries.GetAudioRecordingsByMeetingId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/meetings/{meetingId}/audio-recordings")]
+[Authorize]
 public class AudioRecordingsController : ControllerBase
 {
     private readonly IMediator _mediator;

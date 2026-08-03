@@ -11,12 +11,14 @@ using MeetMind.Application.Meetings.Queries.GetMeetingById;
 using MeetMind.Application.Meetings.Queries.GetMeetingsByHostId;
 using MeetMind.Application.Meetings.Queries.GetMeetingsByStatus;
 using MeetMind.Application.Meetings.Queries.GetMeetingsByTeamId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class MeetingsController : ControllerBase {
 
     private readonly IMediator _mediator;

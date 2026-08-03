@@ -5,12 +5,14 @@ using MeetMind.Application.Teams.Commands.UpdateTeam;
 using MeetMind.Application.Teams.Queries.GetAllTeams;
 using MeetMind.Application.Teams.Queries.GetTeamById;
 using MeetMind.Application.Teams.Queries.GetTeamByName;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class TeamsController : ControllerBase
 {
     private readonly IMediator _mediator;

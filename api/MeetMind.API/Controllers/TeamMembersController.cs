@@ -3,12 +3,14 @@ using MeetMind.Application.Teams.Commands.AddTeamMember;
 using MeetMind.Application.Teams.Commands.ChangeTeamMemberRole;
 using MeetMind.Application.Teams.Commands.RemoveTeamMember;
 using MeetMind.Application.Teams.Queries.GetTeamMembersByTeamId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/teams/{teamId}/members")]
+[Authorize]
 public class TeamMembersController : ControllerBase
 {
     private readonly IMediator _mediator;

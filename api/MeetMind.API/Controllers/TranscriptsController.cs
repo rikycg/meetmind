@@ -2,12 +2,14 @@ using MediatR;
 using MeetMind.Application.Meetings.Commands.CreateTranscript;
 using MeetMind.Application.Meetings.Commands.DeleteTranscript;
 using MeetMind.Application.Meetings.Queries.GetTranscriptByMeetingId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/meetings/{meetingId}/transcript")]
+[Authorize]
 public class TranscriptsController : ControllerBase
 {
     private readonly IMediator _mediator;

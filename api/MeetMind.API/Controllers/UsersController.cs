@@ -5,12 +5,14 @@ using MeetMind.Application.Users.Commands.UpdateUserName;
 using MeetMind.Application.Users.Queries.GetAllUsers;
 using MeetMind.Application.Users.Queries.GetUserByEmail;
 using MeetMind.Application.Users.Queries.GetUserById;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class UsersController : ControllerBase
 {
     private readonly IMediator _mediator;

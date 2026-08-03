@@ -3,12 +3,14 @@ using MeetMind.Application.Meetings.Commands.AddParticipant;
 using MeetMind.Application.Meetings.Commands.LeaveParticipant;
 using MeetMind.Application.Meetings.Commands.RemoveParticipant;
 using MeetMind.Application.Meetings.Queries.GetParticipantsByMeetingId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetMind.API.Controllers;
 
 [ApiController]
 [Route("api/meetings/{meetingId}/participants")]
+[Authorize]
 public class ParticipantsController : ControllerBase
 {
     private readonly IMediator _mediator;
