@@ -1,0 +1,44 @@
+api/MeetMind.Application/Auth/Commands/Login/LoginCommandHandler.cs
+  h_ca3e605b3bbdc7 5,38
+api/MeetMind.API/Controllers/AudioRecordingsController.cs
+  s_c9193331b6a86e::t_eb3cb3d5ffbb8e 5,12
+api/MeetMind.API/Controllers/MeetingsController.cs
+  s_c9193331b6a86e::t_93ac240b6a241a 14,21
+api/MeetMind.API/Controllers/ParticipantsController.cs
+  s_c9193331b6a86e::t_f650fdf1dde3a5 6,13
+api/MeetMind.API/Controllers/TeamMembersController.cs
+  s_c9193331b6a86e::t_4e405db02499a8 6,13
+api/MeetMind.API/Controllers/TeamsController.cs
+  s_c9193331b6a86e::t_c6f78b332d3a70 8,15
+api/MeetMind.API/Controllers/UsersController.cs
+  s_c9193331b6a86e::t_0a544d6c721b6d 8,15
+api/MeetMind.API/Controllers/ActionItemsController.cs
+  h_ca3e605b3bbdc7 10,17
+api/MeetMind.API/Controllers/KeyDecisionsController.cs
+  h_ca3e605b3bbdc7 5,12
+api/MeetMind.API/Controllers/MeetingSummariesController.cs
+  h_ca3e605b3bbdc7 5,12
+api/MeetMind.API/Controllers/TranscriptsController.cs
+  h_ca3e605b3bbdc7 5,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "6beef4f8bb4198c55abb9a6906aada0bd5bce5ab",
+  "prompts": {},
+  "humans": {
+    "h_ca3e605b3bbdc7": {
+      "author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  },
+  "sessions": {
+    "s_c9193331b6a86e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "20e3035d-3b23-4fdc-86ee-86e40a864871",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ricardo Caicedo <c-rcaicedo@neogov.net>"
+    }
+  }
+}
